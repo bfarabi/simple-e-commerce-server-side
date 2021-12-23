@@ -26,6 +26,10 @@ client.connect((err) => {
       res.send(result.insertedId);
     });
   });
+  app.get("/", (req, res) => {
+    res.send("hello db is working");
+  });
+
   app.get("/products", (req, res) => {
     allProduct
       .find({})
@@ -57,4 +61,4 @@ client.connect((err) => {
   });
 });
 
-app.listen(process.env.PORT ||port);
+app.listen(process.env.PORT || port);
